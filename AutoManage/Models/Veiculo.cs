@@ -18,5 +18,7 @@ namespace AutoManage.Models
 
         [Required(ErrorMessage = "É obrigatório informar a placa")]
         public string Placa { get; set; }
+
+        public ICollection<Consumo> Consumos { get; set; }
     }
 }

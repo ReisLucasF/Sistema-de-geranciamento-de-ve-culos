@@ -1,0 +1,47 @@
+﻿@model AutoManage.Models.Veiculo
+
+@{
+    ViewData["Title"] = "Relatorio";
+}
+
+<h2>Veículo: @Model.Nome</h2>
+
+<div>
+    <h4>Consumos</h4>
+    <hr />
+    <table class="table">
+    <thead>
+        <tr>
+            <th>
+               Consumo
+            </th>
+            <th>
+               Valor
+            </th>
+            <th>
+               Data
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Consumos) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
